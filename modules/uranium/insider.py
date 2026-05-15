@@ -27,7 +27,7 @@ def get_insider_transactions(days_back: int = 30) -> list[dict]:
         try:
             # API SEC EDGAR — completamente gratuita
             url      = f"https://data.sec.gov/submissions/CIK{cik}.json"
-            response = requests.get(url, headers=SEC_HEADERS, timeout=15)
+            response = requests.get(url, headers=SEC_HEADERS, timeout=8)
 
             if response.status_code != 200:
                 continue
