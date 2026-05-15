@@ -1,26 +1,9 @@
-# ══════════════════════════════════════════════
-#   URANIUM INTELLIGENCE BOT — requirements.txt
-#   Tutte le librerie necessarie (tutte gratuite)
-# ══════════════════════════════════════════════
-
-# Telegram Bot
 python-telegram-bot==21.6
-
-# Scheduler per report automatico
 APScheduler==3.10.4
-
-# Dati finanziari (gratuito)
 yfinance==0.2.40
-
-# Lettura RSS feeds (gratuito)
 feedparser==6.0.11
-
-# AI gratuita — Groq API
-groq==0.11.0
-
-# HTTP requests
+groq==0.13.0
+httpx==0.27.2
 requests==2.32.3
-
-# Gestione dati
 pandas==2.2.2
 numpy==1.26.4
