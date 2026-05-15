@@ -92,16 +92,17 @@ async def cmd_news(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await msg.edit_text(text, parse_mode='HTML')
 
 async def cmd_insider(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Attività insider recente"""
-    from modules.uranium.insider import get_insider_transactions
     msg = await update.message.reply_text("⏳ Consulto SEC EDGAR...")
-    insider = get_insider_transactions()
-    if not insider:
-        await msg.edit_text("👔 Nessuna transazione insider rilevante nell'ultimo mese.")
-        return
-    lines = [f"• <b>{t['ticker']}</b>: {t['type']} — {t['date']}" for t in insider]
-    text = "👔 <b>INSIDER TRANSACTIONS — Ultimi 30gg</b>\n\n" + "\n".join(lines)
-    await msg.edit_text(text, parse_mode='HTML')
+    try:
+        insider = get_insider_transactions()
+        if not insider:
+            await msg.edit_text("👔 Nessuna transazione insider rilevante nell'ultimo mese.")
+            return
+        lines = [f"• <b>{t['ticker']}</b>: {t['type']} — {t['date']}" for t in insider]
+        text = "👔 <b>INSIDER TRANSACTIONS — Ultimi 30gg</b>\n\n" + "\n".join(lines)
+        await msg.edit_text(text, parse_mode='HTML')
+    except Exception:
+        await msg.edit_text("⚠️ SEC EDGAR non risponde in questo momento. Riprova tra qualche minuto.")
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Gestisce messaggi liberi dell'utente — modalità chat"""
