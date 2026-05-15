@@ -34,6 +34,7 @@ Fornisci un'analisi professionale basata esclusivamente sui dati forniti.
 ═══ ATTIVITÀ INSIDER ═══
 {insider_text}
 
+Traduci in italiano i titoli delle news se sono in inglese.
 Rispondi SOLO con questo formato esatto (non aggiungere altro testo):
 
 [ANALISI] (2-3 frasi su cosa sta succedendo nel mercato)
@@ -79,7 +80,7 @@ NEWS RECENTI: {news_text}
 {user_question}
 
 Regole di risposta:
-- Rispondi in italiano
+- Traduci in italiano qualsiasi titolo o testo in inglese che citi
 - Sii specifico e cita i dati quando rilevante  
 - Non dare mai consigli finanziari assoluti: usa termini probabilistici
 - Massimo 250 parole
