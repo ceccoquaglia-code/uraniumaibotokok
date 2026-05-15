@@ -1,6 +1,6 @@
 python-telegram-bot==21.6
 APScheduler==3.10.4
-yfinance==0.2.40
+
 feedparser==6.0.11
 groq==0.13.0
 httpx==0.27.2
